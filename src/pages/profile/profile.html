@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+        Profile
+    </ion-title>
+</ion-navbar>
+</ion-header>
+
+<ion-content   class ="Register"padding>
+    <div class ="container">
+            <form [formGroup]="userFG" (ngSubmit)="formSubmit(userFG)">
+
+                    <ion-list>
+                        <ion-item>
+                            <ion-label floating>Username</ion-label>
+                            <ion-input formControlName="username" type="text"></ion-input>
+                        </ion-item>
+                        <ion-item no-lines *ngIf="userFG.controls['username'].invalid">
+                        </ion-item>
+            
+                        <ion-item>
+                            <ion-label floating>email</ion-label>
+                            <ion-input formControlName="email" type="email"></ion-input>
+                        </ion-item>
+            
+            
+            
+                        <ion-item>
+                            <ion-label floating>password</ion-label>
+                            <ion-input formControlName="password" type="password"></ion-input>
+                        </ion-item>
+                     
+            
+            
+            
+                    </ion-list>
+                    <button ion-button class="register-btn" block clear (click)=" Edit()">Edit</button>
+                    <button ion-button class="edit-btn" block clear (click)=" get()">Get Profile</button>
+            
+                </form>
+    </div>
+    
+
+</ion-content>
+

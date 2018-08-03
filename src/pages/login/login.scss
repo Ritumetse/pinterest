@@ -1,0 +1,53 @@
+
+
+page-login {
+    .login-content{
+        background-image: url('../../assets/imgs/background.jpg');
+        background-repeat :no-repeat;
+        background-size:cover;
+       }
+      
+
+            .container{
+                background-color: rgba(0.0,0.0,0.0,0.4);
+                border-radius: 10px;
+                margin-top: 20%;
+                margin-left: 20px;
+                margin-right: 20px;
+                padding:20px;
+              box-shadow: none;
+            }
+
+            .page{
+                background-color: transparent;
+            }
+
+
+
+.name{
+    background-color: transparent;
+}
+.email{
+    background-color: transparent;
+}
+.password{
+    background-color: transparent;
+}
+.signup-col {
+    margin: 0px 16px 0px 16px;
+    padding-bottom: 20px;
+  }
+  .register-btn {
+    background: #51CFB1;
+    border-radius: 30px !important;
+    color: #51CFB1;
+
+  }
+  .submit-btn {
+    background: #51CFB1;
+    border-radius: 30px !important;
+    border: 1px solid #ffffff;
+  }
+    }
+
+
