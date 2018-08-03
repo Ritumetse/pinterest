@@ -13,5 +13,6 @@ export class DetailservicesProvider {
   constructor(public http: HttpClient) {
     console.log('Hello DetailservicesProvider Provider');
   }
+  
 
 }

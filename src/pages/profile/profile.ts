@@ -1,4 +1,5 @@
-import { DetailservicesProvider } from './../../providers/detailservices/detailservices';
+import { HomePage } from './../home/home';
+
 
 import { FormGroup, FormControl, FormBuilder,Validators } from '@angular/forms';
 import { DetailsPage } from './../details/details';
@@ -26,7 +27,7 @@ export class ProfilePage {
 
   userFG: FormGroup;
 
-  constructor(public navCtrl: NavController,private fb:FormBuilder , private auth:DetailservicesProvider) {
+  constructor(public navCtrl: NavController,private fb:FormBuilder ) {
     this.userFG = new FormGroup({
       username: new FormControl(''),
       email: new FormControl(''),
@@ -53,6 +54,9 @@ export class ProfilePage {
      
     }
     Edit():void{
+      this.navCtrl.push(HomePage)
+    }
+    get():void{
       this.navCtrl.push(DetailsPage)
     }
     Clear():void{

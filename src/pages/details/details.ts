@@ -1,4 +1,5 @@
-import { AuthService } from './../../providers/auth-service/auth-service';
+
+
 import { HomePage } from './../home/home';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
@@ -17,11 +18,8 @@ import { FormGroup, FormBuilder, FormArray, Validators } from '@angular/forms';
   templateUrl: 'details.html',
 })
 export class DetailsPage {
-users={
 
-}
-public form  : FormGroup
-  constructor(public navCtrl: NavController, public navParams: NavParams, private auth:AuthService ) {
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
