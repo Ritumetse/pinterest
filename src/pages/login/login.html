@@ -5,55 +5,44 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-  <ion-navbar>
-    <ion-title>login</ion-title>
+    <ion-navbar>
+      <ion-title>Log in</ion-title>
+    </ion-navbar>
+  </ion-header>
+  
+  <ion-content class ="login-content">
+  
+    <form (ngSubmit)="login()" [formGroup]="loginForm">
+        <div class="log">
+      <ion-list inset>
+  
+        <ion-item class =" email" >
+          <ion-label floating>
+              <ion-icon ios="ios-mail" md="md-mail"></ion-icon>Email:</ion-label>
+            <ion-input type="text"  formControlName="email"></ion-input>
+        </ion-item>
+          
     
-  </ion-navbar>
-
-</ion-header>
-
-<ion-content  class ="login-content" padding>
-    <div class ="Container " align ="center">
-    <form (ngSubmit)="login()" #registerForm="ngForm">
-          <ion-list >
-            
-            <ion-item  class ="page">
-
-              <ion-icon name="person" item-left primary></ion-icon>
-              <ion-input type="text" placeholder="upload your profile"></ion-input>
-              <ion-icon name="arrow-forward" item-right primary></ion-icon>
-         </ion-item>
-
-              <ion-item class="name"> 
-                  <ion-label floating  style ="color: yellow">Username</ion-label>
-                  <ion-input type="text"></ion-input>
-              </ion-item>
-           
-      
-              <ion-item class="email">
-                  <ion-label floating style ="color:yellow">email</ion-label>
-                  <ion-input  type="email"></ion-input>
-              </ion-item>
-      
-      
-      
-              <ion-item class ="password">
-                  <ion-label floating style="color: yellow">password</ion-label>
-                  <ion-input  type="password"></ion-input>
-              </ion-item>
-   
-          </ion-list>
-
-     
-      </form>
+  
+        <ion-item  class ="password" >
+          <ion-label floating> 
+              <ion-icon ios="ios-lock" md="md-lock"></ion-icon>Password:</ion-label>
+          <ion-input type="password"     formControlName="password"></ion-input>
+        </ion-item><br>
+  
+        <p >
+            <a href="#" style="color:pink">Forgot password?</a>
+          </p>
+          <button ion-button icon-left block clear (click)="login()" style="color:pink">Log in</button>
+      </ion-list>
     </div>
-    <ion-row>
-      <ion-col class="signup-col">
-        <button ion-button class="register-btn" block clear (click)=" createAccount()">Create Account</button>
-      </ion-col>
-    </ion-row>
-      </ion-content>
+  
+    
+  
+      
 
+    </form>
+  </ion-content>
     
       
 

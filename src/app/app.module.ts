@@ -1,4 +1,5 @@
-import { DetailservicesProvider } from './../providers/detailservices/detailservices';
+import { RegisterPage } from './../pages/register/register';
+
 import { DetailsPage } from './../pages/details/details';
 import { LoginPage } from './../pages/login/login';
 import { BrowserModule } from '@angular/platform-browser';
@@ -10,6 +11,13 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { ProfilePage } from '../pages/profile/profile';
+import { Service } from './services/service';
+import { Camera } from '@ionic-native/camera';
+
+
+
+
+
 
 
 @NgModule({
@@ -19,6 +27,7 @@ import { ProfilePage } from '../pages/profile/profile';
     LoginPage,
     ProfilePage,
     DetailsPage,
+    RegisterPage
 
   ],
   imports: [
@@ -31,14 +40,17 @@ import { ProfilePage } from '../pages/profile/profile';
     HomePage,
     LoginPage,
     ProfilePage,
-    DetailsPage
+    DetailsPage,
+    RegisterPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler},
-   DetailservicesProvider
+    Camera,
+    Service,
 
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+   
   ]
 })
 export class AppModule {}

@@ -1,10 +1,12 @@
+
 import { HomePage } from './../home/home';
-
-
+import { Camera, CameraOptions } from '@ionic-native/camera';
+import { LoginPage } from './../login/login';
 import { FormGroup, FormControl, FormBuilder,Validators } from '@angular/forms';
 import { DetailsPage } from './../details/details';
 import { Component } from '@angular/core';
-import { IonicPage, NavController } from 'ionic-angular';
+import { IonicPage, NavController, AlertController } from 'ionic-angular';
+import { RegisterPage } from '../register/register';
 
 /**
  * Generated class for the ProfilePage page.
@@ -19,58 +21,40 @@ import { IonicPage, NavController } from 'ionic-angular';
   templateUrl: 'profile.html',
 })
 export class ProfilePage {
-  user = {
-   
+  public photos : any;
+  public base64Image : string;
+  isOn:boolean;
+status:string;
 
+  constructor(public navCtrl: NavController,private fb:FormBuilder ,private camera:Camera,private alertCtrl:AlertController) {}
+  ngOnInit() {
+    this.photos = [];
   }
-  details=[];
-
-  userFG: FormGroup;
-
-  constructor(public navCtrl: NavController,private fb:FormBuilder ) {
-    this.userFG = new FormGroup({
-      username: new FormControl(''),
-      email: new FormControl(''),
-      password: new FormControl(''),
-     
-    })
-    this.userFG = this.fb.group({
-      username:['',[Validators.required,Validators.minLength(5)]],
-      email:['',[Validators.required,Validators.email]],
-      password:['',[Validators.required,Validators.maxLength(10)]],
-     
-    })
-     }
-     submit() {
-      console.log(this.user);
-     
+  takePhoto(){
+    const options : CameraOptions = {
+      quality: 100, // picture quality
+      destinationType: this.camera.DestinationType.DATA_URL,
+      encodingType: this.camera.EncodingType.JPEG,
+      mediaType: this.camera.MediaType.PICTURE,
+      correctOrientation:true,
+      saveToPhotoAlbum:true
     }
-  
-    formSubmit({value,valid}:{value:User,valid:boolean}) {
-      console.log(value);
-      console.log(valid);
 
-  
-     
+
+    this.camera.getPicture(options) .then((imageData) => {
+      this.base64Image = "data:image/jpeg;base64," + imageData;
+      this.photos.push(this.base64Image);
+      this.photos.reverse();
+    }, (err) => {
+      console.log(err);
+    });
+}
+
+    Edit(){
+      this.navCtrl.push(RegisterPage)
     }
-    Edit():void{
-      this.navCtrl.push(HomePage)
-    }
-    get():void{
+    get(){
       this.navCtrl.push(DetailsPage)
     }
-    Clear():void{
-  
-    }
 
   }
-  export interface User{
-    username:string;
-    email:string;
-    password:string;
-    
-  }
-
-  
- 
-

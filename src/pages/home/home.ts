@@ -1,3 +1,7 @@
+import { DetailsPage } from './../details/details';
+import { ProfilePage } from './../profile/profile';
+import { Service } from './../../app/services/service';
+
 import { LoginPage } from './../login/login';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
@@ -16,13 +20,19 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class HomePage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  Details=[];
+
+
+  constructor(public navCtrl: NavController, public navParams: NavParams,private service:Service) {
+this.Details=this.service.getDetails();
+  }
+  logout(){
+    this.navCtrl.push(LoginPage)
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad HomePage');
+  ok(){
+    this.service.Details=[];
+    this.navCtrl.push(DetailsPage);
   }
-Next():void{
-  this.navCtrl.push(LoginPage)
-}
+
 }

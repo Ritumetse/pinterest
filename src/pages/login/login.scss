@@ -2,13 +2,13 @@
 
 page-login {
     .login-content{
-        background-image: url('../../assets/imgs/background.jpg');
+        background-image: url('../../assets/imgs/background2.jpg');
         background-repeat :no-repeat;
         background-size:cover;
        }
       
 
-            .container{
+            .log{
                 background-color: rgba(0.0,0.0,0.0,0.4);
                 border-radius: 10px;
                 margin-top: 20%;
@@ -18,36 +18,22 @@ page-login {
               box-shadow: none;
             }
 
-            .page{
-                background-color: transparent;
-            }
-
+        
 
 
 .name{
     background-color: transparent;
+    color:pink;
 }
 .email{
     background-color: transparent;
+    color:pink;
 }
 .password{
     background-color: transparent;
+    color:pink;
+
 }
-.signup-col {
-    margin: 0px 16px 0px 16px;
-    padding-bottom: 20px;
-  }
-  .register-btn {
-    background: #51CFB1;
-    border-radius: 30px !important;
-    color: #51CFB1;
 
-  }
-  .submit-btn {
-    background: #51CFB1;
-    border-radius: 30px !important;
-    border: 1px solid #ffffff;
-  }
-    }
-
+}
 

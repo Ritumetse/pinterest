@@ -11,10 +11,29 @@
   </ion-navbar>
 
 </ion-header>
-
-
 <ion-content  class="Details"padding>
   
-  
+
+<div class="info">
+
+
+      <ion-list *ngFor="let triber of codetribes; let i=index">
+ 
+
+          <ion-item class ="details" >
+
+          <img class="circle-pic" src="../assets/imgs/{{triber.pic}}"/>
+
+           <h1>{{triber.name}} {{triber.Surname}}</h1> <br>
+               
+          <button ion-button class="btn" block clear (click)="GetUserInfo(i)" style="color:pink">GetUserInfo</button>
+                
           
+  
+          </ion-item>
+      
+          </ion-list>
+   
+        </div>
+    
 </ion-content>

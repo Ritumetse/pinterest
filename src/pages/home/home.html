@@ -9,9 +9,32 @@
 </ion-header>
 
 <ion-content class ="home" pading>
-    <h1> Welcome to CodeTribe  </h1>
-<ion-fab  middle center>
-<button ion-button color="secondary"  (click)="Next()"> Next</button>
-    </ion-fab>
+  <h1 style="color:pink">WELCOME TO CODETRIBE</h1>
+  <div class ="Container">
+
+    <ion-list *ngFor="let detail of Details; let i=index">
+
+
+        <ion-item class ="details" >
+        <img class="circle-pic" src="../assets/imgs/{{detail.pic}}"/>
+       
+               <h1>Name:{{detail.name}}</h1> 
+               <h1> Surname:{{detail.Surname}}</h1> 
+               <h1>Age:{{detail.Age}}</h1> 
+               <h1>Email:{{detail.email}}</h1> 
+
+               <button ion-button small round color="yellow" (click)="ok()" style="color:pink" >Ok</button>
+           </ion-item>
+      
     
+        </ion-list>
+ 
+
+
+<button ion-button block class="my-button"(click)="logout()"style="background-color:transparent">logout</button>
+
+</div>
 </ion-content>
+    
+    
+ 

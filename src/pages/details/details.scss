@@ -1,6 +1,37 @@
 page-details {
     .Details{
-        background-image: url('../../assets/imgs/background.jpg');
+        background-image: url('../../assets/imgs/background2.jpg');
+       
+
     }
     
+    .info{
+        background-color: rgba(0.0,0.0,0.0,0.4);
+        border-radius: 10px;
+        margin-top: 20%;
+        margin-left: 20px;
+        margin-right: 20px;
+        padding:20px;
+      box-shadow: none;
+    }
+    .button{
+        background-color: transparent;
+    }
+    .details{
+        background-color: transparent;
+        color:pink;
+        
+    
+    }
+    .profile{
+        color:pink
+    }
+  
+    .circle-pic{
+        border-radius:100%;
+        height:200px;
+        width:200px;
+
+    }
+
 }
